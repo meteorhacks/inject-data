@@ -28,7 +28,7 @@ Picker.route("/", function(params, req, res, next) {
 You can get data with the following API from the **client**.
 
 ```js
-InjectData.get("some-key", function(data) {
+InjectData.getData("some-key", function(data) {
   console.log(data);
 });
 ```
