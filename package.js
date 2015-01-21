@@ -10,7 +10,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   configure(api);
-  api.export('InjectData', ['client']);
+  api.export('InjectData', ['client', 'server']);
 });
 
 Package.onTest(function(api) {
