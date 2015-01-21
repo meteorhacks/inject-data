@@ -117,7 +117,7 @@ function getInjectedData(path) {
   var matched = res.content.match(/data">(.*)<\/script/);
   if(matched) {
     var encodedData = matched[1];
-    return DecodeEJSON(encodedData);
+    return InjectData._decode(encodedData);
   } else {
     return null;
   }

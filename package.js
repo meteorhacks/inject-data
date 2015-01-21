@@ -43,7 +43,8 @@ function configure (api) {
   ], 'server', {isAsset: true});
 
   api.addFiles([
-    'lib/utils.js'
+    'lib/namespace.js',
+    'lib/utils.js',
   ], ['client', 'server']);
 
   api.addFiles([
