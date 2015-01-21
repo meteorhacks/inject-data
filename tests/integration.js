@@ -14,6 +14,21 @@ Tinytest.add(
 );
 
 Tinytest.add(
+  'integration - get data on the client',
+  function(test) {
+    var expected = {bb: 10};
+    var path = "/" + Random.id();
+    Picker.route(path, function(params, req, res, next) {
+      res.pushData("aa", {bb: 10});
+      test.equal(res.getData("aa"), expected);
+      next();
+    });
+
+    getInjectedData(path);
+  }
+);
+
+Tinytest.add(
   'integration - different types of data',
   function(test) {
     var path = "/" + Random.id();
