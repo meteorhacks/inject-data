@@ -15,7 +15,7 @@ We need to use this package with a server side router. We've extended nodejs `ht
 Here is an example with [picker](https://github.com/meteorhacks/picker).
 
 ```js
-Picker.router("/", function(params, req, res, next) {
+Picker.route("/", function(params, req, res, next) {
   var ejsonData = {aa: 10};
   res.pushData("some-key", ejsonData);
   // make sure to move the routing forward.
