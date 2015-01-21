@@ -1,8 +1,8 @@
 # meteorhacks:inject-data
 
-### A way to inject data to the client with initial HTML
+#### A way to inject data to the client with initial HTML
 
-This is the project used by fast-render to push data to the client with the initial HTML.
+This is the package used by [`fast-render`](https://github.com/meteorhacks/fast-render) to push data to the client with the initial HTML.
 
 ## Installation
 
@@ -11,6 +11,8 @@ meteor add meteorhacks:fast-render
 ## Push Data
 
 We need to use this package with a server side router. We've extended nodejs `http.OutgoingMessage` and provides an API like this.
+
+Here is an example with [picker](https://github.com/meteorhacks/picker).
 
 ```js
 Picker.router("/", function(params, req, res, next) {
