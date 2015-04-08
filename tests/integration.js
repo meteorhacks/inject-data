@@ -95,6 +95,22 @@ Tinytest.add(
 );
 
 Tinytest.add(
+  'integration - send as a buffer',
+  function(test, done) {
+    var path = "/" + Random.id();
+    Picker.route(path, function(params, req, res, next) {
+      res.pushData("aa", {bb: 10});
+      var str = '<!DOCTYPE html><html><head></head></html>';
+      res.write(new Buffer(str));
+      res.end();
+    });
+
+    var data = getInjectedData(path);
+    test.equal(data, {aa: {bb: 10}});
+  }
+);
+
+Tinytest.add(
   'integration - send with other than HTML',
   function(test, done) {
     var path = "/" + Random.id();
