@@ -100,7 +100,7 @@ Tinytest.add(
     var path = "/" + Random.id();
     Picker.route(path, function(params, req, res, next) {
       res.pushData("aa", {bb: 10});
-      var str = '<!DOCTYPE html><html><head></head></html>';
+      var str = '<!DOCTYPE html><html><head><script></script></head></html>';
       res.write(new Buffer(str));
       res.end();
     });
