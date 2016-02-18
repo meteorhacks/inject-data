@@ -1,4 +1,4 @@
 Picker.route('/', function(params, req, res, next) {
-  res.pushData("hello", {meteorhacks: "rocks"});
+  InjectData.pushData(res, "hello", {meteorhacks: "rocks"});
   next();
 });

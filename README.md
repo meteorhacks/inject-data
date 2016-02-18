@@ -6,7 +6,7 @@ This is the package used by [`fast-render`](https://github.com/meteorhacks/fast-
 
 ## Installation
 
-meteor add meteorhacks:fast-render
+meteor add meteorhacks:inject-data
 
 ## Push Data
 
@@ -17,7 +17,7 @@ Here is an example with [picker](https://github.com/meteorhacks/picker).
 ```js
 Picker.route("/", function(params, req, res, next) {
   var ejsonData = {aa: 10};
-  res.pushData("some-key", ejsonData);
+  InjectData.pushData(res, "some-key", ejsonData);
   // make sure to move the routing forward.
   next();
 });
@@ -32,4 +32,3 @@ InjectData.getData("some-key", function(data) {
   console.log(data);
 });
 ```
-

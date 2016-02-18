@@ -3,7 +3,7 @@ Tinytest.add(
   function(test) {
     var path = "/" + Random.id();
     Picker.route(path, function(params, req, res, next) {
-      res.pushData("aa", {bb: 10});
+      InjectData.pushData(res, "aa", {bb: 10});
       next();
     });
 
@@ -19,8 +19,8 @@ Tinytest.add(
     var expected = {bb: 10};
     var path = "/" + Random.id();
     Picker.route(path, function(params, req, res, next) {
-      res.pushData("aa", {bb: 10});
-      test.equal(res.getData("aa"), expected);
+      InjectData.pushData(res, "aa", {bb: 10});
+      test.equal(InjectData.getData(res, "aa"), expected);
       next();
     });
 
@@ -40,7 +40,7 @@ Tinytest.add(
 
     Picker.route(path, function(params, req, res, next) {
       _.each(sendingData, function(val, key) {
-        res.pushData(key, val);
+        InjectData.pushData(res, key, val);
       });
       next();
     });
@@ -56,7 +56,7 @@ Tinytest.add(
     var path = "/" + Random.id();
     var text = "<s> sdsd //\\ </script>alert('hello');</script>"
     Picker.route(path, function(params, req, res, next) {
-      res.pushData("aa", text);
+      InjectData.pushData(res, "aa", text);
       next();
     });
 
@@ -81,7 +81,7 @@ Tinytest.add(
   function(test, done) {
     var path = "/" + Random.id();
     Picker.route(path, function(params, req, res, next) {
-      res.pushData("aa", {bb: 10});
+      InjectData.pushData(res, "aa", {bb: 10});
       res.writeHead(200, {
         'access-control-allow-origin': '*'
       });
@@ -99,7 +99,7 @@ Tinytest.add(
   function(test, done) {
     var path = "/" + Random.id();
     Picker.route(path, function(params, req, res, next) {
-      res.pushData("aa", {bb: 10});
+      InjectData.pushData(res, "aa", {bb: 10});
       var str = '<!DOCTYPE html><html><head><script></script></head></html>';
       res.write(new Buffer(str));
       res.end();
@@ -115,7 +115,7 @@ Tinytest.add(
   function(test, done) {
     var path = "/" + Random.id();
     Picker.route(path, function(params, req, res, next) {
-      res.pushData("aa", {bb: 10});
+      InjectData.pushData(res, "aa", {bb: 10});
       res.write('some other data');
       res.end();
     });
