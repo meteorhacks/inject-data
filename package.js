@@ -37,8 +37,8 @@ Package.onTest(function(api) {
 function configure (api) {
   api.versionsFrom('METEOR@0.9.3');
 
-  api.use(['ejson', 'underscore'], ['server', 'client']);
-  api.use('jquery', 'client');
+  api.use('ejson', ['server', 'client']);
+  api.use('underscore', 'server');
 
   api.addFiles([
     'lib/inject.html',
