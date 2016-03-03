@@ -39,9 +39,11 @@ Tinytest.add(
     };
 
     Picker.route(path, function(params, req, res, next) {
-      _.each(sendingData, function(val, key) {
-        InjectData.pushData(res, key, val);
-      });
+      for (var key in sendingData) {
+        if (sendingData.hasOwnProperty(key)) {
+          console.log(key, sendingData[key]);
+        }
+      }
       next();
     });
 
