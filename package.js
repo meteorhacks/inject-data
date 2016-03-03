@@ -37,12 +37,7 @@ Package.onTest(function(api) {
 function configure (api) {
   api.versionsFrom('METEOR@0.9.3');
 
-  api.use(['ejson', 'underscore'], ['server', 'client']);
-  api.use('jquery', 'client');
-
-  api.addFiles([
-    'lib/inject.html',
-  ], 'server', {isAsset: true});
+  api.use('ejson', ['server', 'client']);
 
   api.addFiles([
     'lib/namespace.js',

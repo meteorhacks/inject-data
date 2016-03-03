@@ -39,9 +39,11 @@ Tinytest.add(
     };
 
     Picker.route(path, function(params, req, res, next) {
-      _.each(sendingData, function(val, key) {
-        InjectData.pushData(res, key, val);
-      });
+      for (var key in sendingData) {
+        if (sendingData.hasOwnProperty(key)) {
+          InjectData.pushData(res, key, sendingData[key]);
+        }
+      }
       next();
     });
 
@@ -130,7 +132,8 @@ function getInjectedData(path) {
   var url = urlResolve(process.env.ROOT_URL, path);
   var res = HTTP.get(url);
 
-  var matched = res.content.match(/data">(.*)<\/script/);
+  var matched = res.content.match(/data">(.*?)<\/script/);
+
   if(matched) {
     var encodedData = matched[1];
     return InjectData._decode(encodedData);
