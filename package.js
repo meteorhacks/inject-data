@@ -10,11 +10,13 @@ Package.describe({
 
 Package.onUse(function(api) {
   configure(api);
+  api.use('webapp');
   api.export('InjectData', ['client', 'server']);
 });
 
 Package.onTest(function(api) {
   configure(api);
+  api.use('webapp', 'server');
   api.use('tinytest', ['client', 'server']);
   api.use('http', 'server');
   api.use('random', 'server');
