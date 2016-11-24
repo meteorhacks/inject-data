@@ -38,7 +38,6 @@ function configure (api) {
   api.versionsFrom('METEOR@0.9.3');
 
   api.use(['ejson', 'underscore'], ['server', 'client']);
-  api.use('jquery', 'client');
 
   api.addFiles([
     'lib/inject.html',
