@@ -3,9 +3,9 @@ var path = Npm.require('path');
 
 Package.describe({
   "summary": "A way to inject data to the client with initial HTML",
-  "version": "2.0.0",
-  "git": "https://github.com/meteorhacks/inject-data",
-  "name": "meteorhacks:inject-data"
+  "version": "2.0.1",
+  "git": "https://github.com/abecks/inject-data",
+  "name": "staringatlights:inject-data"
 });
 
 Package.onUse(function(api) {
