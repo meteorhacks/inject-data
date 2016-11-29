@@ -1,5 +1,14 @@
 # Change Log
 
+### v2.0.3
+* Increase compatibility with other packages using `WebApp.connectHandlers.use`, including `reactrouter:react-router-ssr`
+
+### v2.0.2
+* Released as `staringatlights:inject-data`
+
+### v2.0.1
+* Update for Meteor 1.4.2+
+
 ### v2.0.0
 2016-Feb-19
 
