@@ -1,5 +1,8 @@
 # Change Log
 
+### v2.0.4
+* Add check to ensure the injection middleware always runs last
+
 ### v2.0.3
 * Increase compatibility with other packages using `WebApp.connectHandlers.use`, including `reactrouter:react-router-ssr`
 

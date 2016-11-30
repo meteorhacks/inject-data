@@ -3,7 +3,7 @@ var path = Npm.require('path');
 
 Package.describe({
   "summary": "A way to inject data to the client with initial HTML",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "git": "https://github.com/abecks/meteor-inject-data",
   "name": "staringatlights:inject-data"
 });
