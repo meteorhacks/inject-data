@@ -1,5 +1,8 @@
 # Change Log
 
+### v2.0.5
+* Override `meteorhacks:inject-data` if both packages are present, for greater backwards compatibility
+
 ### v2.0.4
 * Add check to ensure the injection middleware always runs last
 
